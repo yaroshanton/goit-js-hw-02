@@ -1,15 +1,25 @@
-let message;
-let answer;
-const ADMIN_PASSWORD = '1234';
+const findLongestWord = function(string) {
+    
+    let maxValue = 0;
+    let longestWord;
 
-answer = prompt('Привет');
+    const words = string.split(' ');
+    
 
-if (answer === null) {
-    message = ('Отменено пользователем!');
-} else if (answer === ADMIN_PASSWORD) {
-    message = ('Добро пожаловать!');
-} else {
-    message = ('Доступ запрещен, неверный пароль!');
-}
+    for (let i = 0; i < words.length; i += 1) {
 
-alert (message);
+        if (words[i].length > maxValue) {
+            maxValue = words[i].length;
+            longestWord = words[i];
+        }
+    }
+
+    return longestWord;
+
+};
+  
+  console.log(findLongestWord('The quick brown fox jumped over the lazy dog')); // 'jumped'
+  
+  console.log(findLongestWord('Google do a roll')); // 'Google'
+  
+  console.log(findLongestWord('May the force be with you')); // 'force'

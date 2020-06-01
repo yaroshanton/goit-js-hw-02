@@ -1,17 +1,70 @@
-const credits = 23580;
-const pricePerDroid = 3000;
+const formatString = function(string) {
 
-let totalPrice;
+    let words = '';
+    
+        if (string.length < 40) {
+          words = string;
+        } else {
+            for (let i = 0; i < 40; i++) {
+              words =  words + string[i];
+            }
+            words = words + '...';
+        }
 
-totalPrice = prompt('Сколько дроидов желаете купить?')
-let left = (credits - (pricePerDroid * totalPrice));
+    return words;
 
-if (totalPrice === null) {
-    totalPrice = ('Отменено пользователем!');
-} else if ((pricePerDroid * totalPrice) > credits) {
-    totalPrice = ('Недостаточно средств на счету!');
-} else {
-    totalPrice = (`Вы купили ${totalPrice} дроидов, на счету осталось ${left} кредитов.`);
-}
+  };
 
-console.log(totalPrice);
+  console.log(formatString('Curabitur ligula sapien, tincidunt non.'));
+  // вернется оригинальная строка
+  
+  console.log(formatString('Vestibulum facilisis, purus nec pulvinar iaculis.'));
+  // вернется форматированная строка
+  
+  console.log(formatString('Curabitur ligula sapien.'));
+  // вернется оригинальная строка
+  
+  console.log(
+    formatString(
+      'Nunc sed turpis. Curabitur a felis in nunc fringilla tristique.',
+    ),
+  );
+  // вернется форматированная строка
+
+
+
+
+// TODO: АБО ТАК
+
+  // const formatString = function(string) {
+
+//     let srtings;
+
+//         if (string.length < 40) {
+//             srtings = string;
+//         } else {
+//             srtings = string.substr(0, 40) + '...';
+//         }
+
+//     return srtings;
+
+//   };
+  
+//   /*
+//    * Вызовы функции для проверки работоспособности твоей реализации.
+//    */
+//   console.log(formatString('Curabitur ligula sapien, tincidunt non.'));
+//   // вернется оригинальная строка
+  
+//   console.log(formatString('Vestibulum facilisis, purus nec pulvinar iaculis.'));
+//   // вернется форматированная строка
+  
+//   console.log(formatString('Curabitur ligula sapien.'));
+//   // вернется оригинальная строка
+  
+//   console.log(
+//     formatString(
+//       'Nunc sed turpis. Curabitur a felis in nunc fringilla tristique.',
+//     ),
+//   );
+//   // вернется форматированная строка

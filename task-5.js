@@ -1,24 +1,23 @@
-let country;
+const checkForSpam = function(message) {
+    
+    let lowString = message.toLowerCase();
 
-country = prompt('Введите страну:')
+    if (lowString.indexOf('sale') !== -1 || lowString.indexOf('spam') !== -1) {
+        return true;
+    } else {
+        return false;
+    }
+    
+  };
+  
+  /*
+   * Вызовы функции для проверки работоспособности твоей реализации.
+   */
+  console.log(checkForSpam('Latest technology news')); // false
+  
+  console.log(checkForSpam('JavaScript weekly newsletter')); // false
+  
+  console.log(checkForSpam('Get best sale offers now!')); // true
+  
+  console.log(checkForSpam('[SPAM] How to earn fast money?')); // true
 
-switch (country.toLowerCase()) {
-    case 'китай':
-        console.log('Доставка в Китай будет стоить 100 кредитов');
-        break;
-    case 'чили':
-        console.log('Доставка в Чили будет стоить 250 кредитов');
-        break;
-    case 'австралия':
-        console.log('Доставка в Австралия будет стоить 170 кредитов');
-        break;
-    case 'индия':
-        console.log('Доставка в Индия будет стоить 80 кредитов');
-        break;
-    case 'ямайка':
-        console.log('Доставка в Ямайка будет стоить 120 кредитов');
-        break;
-        
-    default: 
-        alert('В вашей стране доставка не доступна')
-}
