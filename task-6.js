@@ -2,25 +2,15 @@ let input;
 const numbers = [];
 let total = 0;
 
-while (true) {
-    let input = prompt('Введите число:');
-    
-    if (input === null) {
-        console.log('Отменено пользовтелем!');
-        for (let i = 0; i < numbers.length; i += 1) {
-            
-            total = numbers[i] + total;
-        }
-        console.log(`Общая сумма чисел равна ${total}`);
-        break;
-    } 
-    
-    input = Number(input)
+while (input = prompt('Введите число:')) {
 
-    if (Number.isNaN(input)) {
-        alert('Было введено не число, попробуйте еще раз!');
-        continue;
-    } else {
-        numbers.push(input);
+    input = Number(input);
+    numbers.push(input)
+}
+
+if (numbers.length !== 0) {
+    for (let nubmer of numbers) {
+        total = nubmer += total;
     }
+    console.log(`Общая сумма чисел равна ${total}`);
 }
