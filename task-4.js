@@ -1,10 +1,8 @@
 const formatString = function(string) {
-
-    let words;
     
-    string.length < 40 ? words = string : words = string.substr(0, 40) + '...';
+    return string.length < 40 ? string : string.substr(0, 40) + '...'
 
-    return words;
+  
 
   };
 
